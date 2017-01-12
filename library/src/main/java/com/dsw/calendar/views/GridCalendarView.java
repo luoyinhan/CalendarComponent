@@ -96,4 +96,10 @@ public class GridCalendarView extends LinearLayout implements View.OnClickListen
             gridMonthView.onRightClick();
         }
     }
+
+    //初始化 title
+    public void initCurentTitle() {
+        textViewYear.setText(gridMonthView.getSelYear() + "年");
+        textViewMonth.setText((gridMonthView.getSelMonth() + 1) + "月");
+    }
 }

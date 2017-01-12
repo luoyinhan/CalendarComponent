@@ -96,4 +96,10 @@ public class CircleCalendarView extends LinearLayout implements View.OnClickList
             circleMonthView.onRightClick();
         }
     }
+
+    //初始化 title
+    public void initCurentTitle() {
+        textViewYear.setText(circleMonthView.getSelYear() + "年");
+        textViewMonth.setText((circleMonthView.getSelMonth() + 1) + "月");
+    }
 }

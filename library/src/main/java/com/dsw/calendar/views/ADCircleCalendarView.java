@@ -48,6 +48,7 @@ public class ADCircleCalendarView extends LinearLayout implements View.OnClickLi
                 textViewMonth.setText((circleMonthView.getSelMonth() + 1) + "月");
             }
         });
+        initCurentTitle();
     }
 
     /**
@@ -95,5 +96,11 @@ public class ADCircleCalendarView extends LinearLayout implements View.OnClickLi
         } else {
             circleMonthView.onRightClick();
         }
+    }
+
+    //初始化 title
+    public void initCurentTitle() {
+        textViewYear.setText(circleMonthView.getSelYear() + "年");
+        textViewMonth.setText((circleMonthView.getSelMonth() + 1) + "月");
     }
 }
