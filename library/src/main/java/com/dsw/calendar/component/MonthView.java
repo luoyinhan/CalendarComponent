@@ -157,7 +157,7 @@ public abstract class MonthView extends View {
                     if (smoothMode == 0) {
                         setLeftDate();
                         indexMonth--;
-                        scrollLeftRight.aciton(selYear, selMonth + 1);//添加滑动回调
+                        scrollAction();
                     } else {
                         onLeftClick();
                     }
@@ -165,7 +165,7 @@ public abstract class MonthView extends View {
                     if (smoothMode == 0) {
                         setRightDate();
                         indexMonth++;
-                        scrollLeftRight.aciton(selYear, selMonth + 1);////添加滑动回调
+                        scrollAction();
                     } else {
                         onRightClick();
                     }
@@ -180,6 +180,12 @@ public abstract class MonthView extends View {
                 break;
         }
         return true;
+    }
+
+    private void scrollAction() {
+        if(scrollLeftRight!=null) {
+            scrollLeftRight.aciton(selYear, selMonth + 1);
+        }
     }
 
     //调用此方法滚动到目标位置
@@ -269,7 +275,7 @@ public abstract class MonthView extends View {
         if (monthLisener != null) {
             monthLisener.setTextMonth();
         }
-        scrollLeftRight.aciton(selYear,selMonth+1);
+        scrollAction();
     }
 
     /**
@@ -281,7 +287,7 @@ public abstract class MonthView extends View {
         if (monthLisener != null) {
             monthLisener.setTextMonth();
         }
-        scrollLeftRight.aciton(selYear,selMonth+1);
+        scrollAction();
     }
 
     private void setLeftDate() {
